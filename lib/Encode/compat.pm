@@ -1,16 +1,13 @@
 # $File: //member/autrijus/Encode-compat/lib/Encode/compat.pm $ $Author: autrijus $
-# $Revision: #1 $ $Change: 985 $ $DateTime: 2002/09/22 02:34:44 $
+# $Revision: #2 $ $Change: 1013 $ $DateTime: 2002/09/24 02:23:48 $
 
 package Encode::compat;
-$Encode::compat::VERSION = '0.01';
+$Encode::compat::VERSION = '0.02';
 
 use strict;
 
 if ($] >= 5.007001 or $INC{'Encode.pm'}) {
     # nothing happens -- Encode.pm already available.
-    $INC{'Encode.pm'} = __FILE__;
-    require Encode::compat::common;
-    require Encode::compat::5006001;
 }
 elsif ($] == 5.006001) {
     $INC{'Encode.pm'} = __FILE__;
@@ -31,7 +28,7 @@ Encode::compat - Encode.pm emulation layer
 
 =head1 VERSION
 
-This document describes version 0.01 of Encode::compat.
+This document describes version 0.02 of Encode::compat.
 
 =head1 SYNOPSIS
 

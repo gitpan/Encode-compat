@@ -1,5 +1,5 @@
 # $File: //member/autrijus/Encode-compat/lib/Encode/compat/common.pm $ $Author: autrijus $
-# $Revision: #1 $ $Change: 985 $ $DateTime: 2002/09/22 02:34:44 $
+# $Revision: #2 $ $Change: 1013 $ $DateTime: 2002/09/24 02:23:48 $
 
 package Encode::compat::common;
 our $VERSION = '0.01';
@@ -83,9 +83,10 @@ sub encode($$;$) {
     my %decoder;
     sub _convert {
 	require Text::Iconv;
+	my ($from, $to) = map { s/^utf8$/utf-8/i; lc($_) } ($_[1], $_[2]);
 
-	my $result = ($_[1] eq $_[2]) ? $_[0] : (
-	    $decoder{@_[1, 2]} ||= Text::Iconv->new( @_[1, 2] )
+	my $result = ($from eq $to) ? $_[0] : (
+	    $decoder{$from, $to} ||= Text::Iconv->new( $from, $to )
 	)->convert($_[0]);
 
 	return $result;
