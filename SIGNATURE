@@ -14,19 +14,19 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 be2ad7b80f4b7d6543e0e1936840a735677e3d84 Changes
+SHA1 75cdf4eb56476f4f07d7d28da29c97093356d154 Changes
 SHA1 91fbf6e0f3a694bfb1ab342a2ebd99ea7e83ea18 MANIFEST
 SHA1 57b2271401ecea116f7d92e8be4cb509af164e71 Makefile.PL
 SHA1 95131168e8ca9c4ffce5886a17f65718d3ba0112 README
 SHA1 4c8587d83769d06dae43533d58b5da29cd75ac81 lib/Encode/Alias.pm
-SHA1 b33adb1458321e8b52f9809daa9ea5d649e69b1e lib/Encode/compat.pm
+SHA1 7c3cd3196f67601728a9c9a590c8fdca9b6ad8fe lib/Encode/compat.pm
 SHA1 d614c3aa500e1d1970eea2aed9f326a93e47fde0 lib/Encode/compat/5006001.pm
-SHA1 78a12e4dcf50fda5fba2b23e27e846926b7a5c2b lib/Encode/compat/common.pm
+SHA1 09eb480b50fc77224de4018de52a84356b8a1ba4 lib/Encode/compat/common.pm
 SHA1 602d357fe4892d8baace93878ca4bbbf4f829391 t/1-basic.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.0.7 (FreeBSD)
 
-iD8DBQE9mQKAtLPdNzw1AaARAntZAJ9ttb4/betXMKyKIazXzWkq3HHoVQCeIt7a
-UtvRWhiib072gpMZHHcttRY=
-=Bmru
+iD8DBQE9mlhStLPdNzw1AaARAlpXAJoDc4kqBRixc1kiZn1xqCxFLt28AQCgsKja
+OQywF9LFMj46fzb/SROfO0M=
+=lIdT
 -----END PGP SIGNATURE-----

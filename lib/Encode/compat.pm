@@ -1,8 +1,8 @@
 # $File: //member/autrijus/Encode-compat/lib/Encode/compat.pm $ $Author: autrijus $
-# $Revision: #2 $ $Change: 1013 $ $DateTime: 2002/09/24 02:23:48 $
+# $Revision: #4 $ $Change: 1131 $ $DateTime: 2002/10/02 01:58:52 $
 
 package Encode::compat;
-$Encode::compat::VERSION = '0.03';
+$Encode::compat::VERSION = '0.04';
 
 use strict;
 
@@ -28,7 +28,7 @@ Encode::compat - Encode.pm emulation layer
 
 =head1 VERSION
 
-This document describes version 0.03 of Encode::compat.
+This document describes version 0.04 of Encode::compat.
 
 =head1 SYNOPSIS
 

@@ -1,4 +1,18 @@
 ____________________________________________________________________________
+[  1131] By: autrijus                              on 2002/10/02  01:58:52
+        Log: * I really meant 0.04.
+	   ! lib/Encode/compat.pm
+____________________________________________________________________________
+[  1129] By: autrijus                              on 2002/10/02  01:56:45
+        Log: * This be 0.03.
+             * emulates all the functions now: encode_utf8, decode_utf8 and encodings
+             * finally enables RT to be run on the emulation layer.
+	   ! lib/Encode/compat.pm lib/Encode/compat/common.pm
+____________________________________________________________________________
+[  1123] By: autrijus                              on 2002/10/01  01:42:49
+        Log: * changes and signatures.
+	   ! Changes SIGNATURE
+____________________________________________________________________________
 [  1122] By: autrijus                              on 2002/10/01  01:40:18
         Log: * This be 0.03.
              * Encode::Alias inclusion, prompted by Robert Allerstorfer.
