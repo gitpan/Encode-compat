@@ -1,0 +1,95 @@
+# $File: //member/autrijus/Encode-compat/lib/Encode/compat/common.pm $ $Author: autrijus $
+# $Revision: #1 $ $Change: 985 $ $DateTime: 2002/09/22 02:34:44 $
+
+package Encode::compat::common;
+our $VERSION = '0.01';
+
+1;
+
+package Encode;
+
+use strict;
+our $VERSION = '0.01';
+
+our @EXPORT = qw(
+  decode  decode_utf8  encode  encode_utf8
+  encodings  find_encoding
+);
+
+use constant DIE_ON_ERR		=> 1;
+use constant WARN_ON_ERR	=> 2;
+use constant RETURN_ON_ERR	=> 4;
+use constant LEAVE_SRC		=> 8;
+
+use constant PERLQQ		=> 256;
+use constant HTMLCREF		=> 512;
+use constant XMLCREF		=> 1024;
+
+use constant FB_DEFAULT		=> 0;
+use constant FB_CROAK		=> 1;
+use constant FB_QUIET		=> 4;
+use constant FB_WARN		=> 6;
+use constant FB_PERLQQ		=> 256;
+use constant FB_HTMLCREF	=> 512;
+use constant FB_XMLCREF		=> 1024;
+
+our @FB_FLAGS  = qw(DIE_ON_ERR WARN_ON_ERR RETURN_ON_ERR LEAVE_SRC
+                    PERLQQ HTMLCREF XMLCREF);
+our @FB_CONSTS = qw(FB_DEFAULT FB_CROAK FB_QUIET FB_WARN
+                    FB_PERLQQ FB_HTMLCREF FB_XMLCREF);
+
+our @EXPORT_OK =
+    (
+     qw(
+       _utf8_off _utf8_on define_encoding from_to is_16bit is_8bit
+       is_utf8 perlio_ok resolve_alias utf8_downgrade utf8_upgrade
+      ),
+     @FB_FLAGS, @FB_CONSTS,
+    );
+
+our %EXPORT_TAGS =
+    (
+     all          =>  [ @EXPORT, @EXPORT_OK ],
+     fallbacks    =>  [ @FB_CONSTS ],
+     fallback_all =>  [ @FB_CONSTS, @FB_FLAGS ],
+    );
+
+sub from_to ($$$;$) {
+    use utf8;
+
+    # XXX: bad hack
+    if ($_[3] and $_[3] == FB_HTMLCREF() and lc($_[2]) eq 'latin1') {
+	$_[0] = join('', map {
+	    ord($_) < 128
+		? $_ : '&#' . ord($_) . ';'
+	} split(//, decode($_[1], $_[0])));
+    }
+    else {
+	$_[0] = _convert(@_[0..2]);
+    }
+}
+
+sub decode($$;$) {
+    my $result = _convert($_[1], $_[0] => 'utf-8'); 
+    _utf8_on($result);
+    return $result;
+}
+
+sub encode($$;$) {
+    return _convert($_[1], 'utf-8' => $_[0]);
+}
+
+{
+    my %decoder;
+    sub _convert {
+	require Text::Iconv;
+
+	my $result = ($_[1] eq $_[2]) ? $_[0] : (
+	    $decoder{@_[1, 2]} ||= Text::Iconv->new( @_[1, 2] )
+	)->convert($_[0]);
+
+	return $result;
+    }
+}
+
+1;
