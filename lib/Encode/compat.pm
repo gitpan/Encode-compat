@@ -1,15 +1,15 @@
 # $File: //member/autrijus/Encode-compat/lib/Encode/compat.pm $ $Author: autrijus $
-# $Revision: #6 $ $Change: 10024 $ $DateTime: 2004/02/13 21:42:35 $
+# $Revision: #7 $ $Change: 10735 $ $DateTime: 2004/06/03 14:08:57 $
 
 package Encode::compat;
-$Encode::compat::VERSION = '0.06';
+$Encode::compat::VERSION = '0.07';
 
 use strict;
 
 if ($] >= 5.007001 or $INC{'Encode.pm'}) {
     # nothing happens -- Encode.pm already available.
 }
-elsif ($] == 5.006001) {
+elsif ($] >= 5.006001 and $] <= 5.007) {
     require Encode::compat::Alias;
     $INC{'Encode/Alias.pm'} = $INC{'Encode/compat/Alias.pm'};
 
@@ -31,8 +31,8 @@ Encode::compat - Encode.pm emulation layer
 
 =head1 VERSION
 
-This document describes version 0.06 of Encode::compat, released
-February 14, 2004.
+This document describes version 0.07 of Encode::compat, released
+June 3, 2004.
 
 =head1 SYNOPSIS
 
@@ -62,7 +62,7 @@ other transcoding modules.
 
 =head1 CAVEATS
 
-Currently, this module only support 5.6.1, and merely provides the three
+Currently, this module only support 5.6.1+, and merely provides the three
 utility function above (C<encode()>, C<decode()> and C<from_to()>), with
 a very kludgy C<FB_HTMLCREF> fallback against C<latin-1> in
 C<from_to()>.
