@@ -1,7 +1,14 @@
+# $File: //member/autrijus/.vimrc $ $Author: autrijus $
+# $Revision: #1 $ $Change: 1649 $ $DateTime: 2002/10/24 15:21:23 $
+
+package Encode::compat::Alias;
+our $VERSION = '0.05';
+
+1;
+
 package Encode::Alias;
 use strict;
-use Encode;
-our $VERSION = do { my @r = (q$Revision: 1.32 $ =~ /\d+/g); sprintf "%d."."%02d" x $#r, @r };
+our $VERSION = '0.05';
 our $DEBUG = 0;
 
 use base qw(Exporter);

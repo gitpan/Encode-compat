@@ -1,15 +1,15 @@
 # $File: //member/autrijus/Encode-compat/lib/Encode/compat/common.pm $ $Author: autrijus $
-# $Revision: #5 $ $Change: 1129 $ $DateTime: 2002/10/02 01:56:45 $
+# $Revision: #6 $ $Change: 2534 $ $DateTime: 2002/12/02 00:33:16 $
 
 package Encode::compat::common;
-our $VERSION = '0.03';
+our $VERSION = '0.05';
 
 1;
 
 package Encode;
 
 use strict;
-our $VERSION = '0.03';
+our $VERSION = '0.05';
 
 our @EXPORT = qw(
   decode  decode_utf8  encode  encode_utf8

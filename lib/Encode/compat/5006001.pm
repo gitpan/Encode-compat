@@ -1,8 +1,8 @@
 # $File: //member/autrijus/Encode-compat/lib/Encode/compat/5006001.pm $ $Author: autrijus $
-# $Revision: #2 $ $Change: 1028 $ $DateTime: 2002/09/24 14:41:58 $
+# $Revision: #3 $ $Change: 2534 $ $DateTime: 2002/12/02 00:33:16 $
 
 package Encode::compat::5006001;
-our $VERSION = '0.01';
+our $VERSION = '0.05';
 
 1;
 

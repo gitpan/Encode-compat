@@ -1,8 +1,8 @@
 # $File: //member/autrijus/Encode-compat/lib/Encode/compat.pm $ $Author: autrijus $
-# $Revision: #4 $ $Change: 1131 $ $DateTime: 2002/10/02 01:58:52 $
+# $Revision: #5 $ $Change: 2534 $ $DateTime: 2002/12/02 00:33:16 $
 
 package Encode::compat;
-$Encode::compat::VERSION = '0.04';
+$Encode::compat::VERSION = '0.05';
 
 use strict;
 
@@ -10,9 +10,12 @@ if ($] >= 5.007001 or $INC{'Encode.pm'}) {
     # nothing happens -- Encode.pm already available.
 }
 elsif ($] == 5.006001) {
-    $INC{'Encode.pm'} = __FILE__;
+    require Encode::compat::Alias;
+    $INC{'Encode/Alias.pm'} = $INC{'Encode/compat/Alias.pm'};
+
     require Encode::compat::common;
     require Encode::compat::5006001;
+    $INC{'Encode.pm'} = __FILE__;
 }
 else {
     die "Encode.pm compatibility layer for $] not yet available.";
@@ -65,8 +68,7 @@ C<from_to()>.
 
 =head1 SEE ALSO
 
-L<Encode>,
-L<perlunicode>,
+L<Encode>, L<perlunicode>
 
 =head1 AUTHORS
 
