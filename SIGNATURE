@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.21.
+signed via the Module::Signature module, version 0.38.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,19 +14,21 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 21477586405a48aed05daa007c11b9e9997524a1 Changes
-SHA1 047042b2397bf565512794b6e1f6271ca951f03c MANIFEST
+SHA1 4ba9782ba5c917b9ac1abb834b56ddbc86d3ad55 Changes
+SHA1 610e562470e4af1bbec0261a2ce97cb4a9545122 MANIFEST
+SHA1 5bedf9a2ec780810174de559b0cf1cfbb7be747d META.yml
 SHA1 57b2271401ecea116f7d92e8be4cb509af164e71 Makefile.PL
-SHA1 95131168e8ca9c4ffce5886a17f65718d3ba0112 README
-SHA1 44f9343cfa0e592758f0a069ce7d6896ee782729 lib/Encode/compat.pm
+SHA1 d2bfa46dc80905d78870d870d783ad32370fe08d README
+SHA1 ca6576380ce0e0c4a3e963602260341aa629bc96 lib/Encode/compat.pm
 SHA1 0666251f720ff512406120a3cf43b3f15fc75d28 lib/Encode/compat/5006001.pm
 SHA1 9145f2ad0b15dc44427af5dcfed70988030434ae lib/Encode/compat/Alias.pm
-SHA1 95e4a3fa1e4424ab1ff6eb714579534b8441d475 lib/Encode/compat/common.pm
-SHA1 602d357fe4892d8baace93878ca4bbbf4f829391 t/1-basic.t
+SHA1 725284b989e6530eacb389b13b1e9b70e5f07ca8 lib/Encode/compat/common.pm
+SHA1 a4d5f7cf68664842685148c726621f970640d8ff t/0-signature.t
+SHA1 c96c46c4e9d99a154c56a5f95a5b3455334a0beb t/1-basic.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.0 (FreeBSD)
+Version: GnuPG v1.2.3 (FreeBSD)
 
-iD8DBQE96q5AtLPdNzw1AaARAqIKAJ0f2qNcOE5+WOhrrS7vvQecwchl3wCgtiqw
-gFCXlKoap9ubvDgqhoV0BfI=
-=HSSd
+iD8DBQFALUWttLPdNzw1AaARAmoPAKCUaEnkXtr9qyGs8tMlmN02MkWcPwCggB0g
+Ry39B0ZgVuOJgziWCj7pkas=
+=bqdC
 -----END PGP SIGNATURE-----

@@ -1,15 +1,15 @@
 # $File: //member/autrijus/Encode-compat/lib/Encode/compat/common.pm $ $Author: autrijus $
-# $Revision: #6 $ $Change: 2534 $ $DateTime: 2002/12/02 00:33:16 $
+# $Revision: #7 $ $Change: 10024 $ $DateTime: 2004/02/13 21:42:35 $
 
 package Encode::compat::common;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 1;
 
 package Encode;
 
 use strict;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 our @EXPORT = qw(
   decode  decode_utf8  encode  encode_utf8
@@ -80,21 +80,25 @@ sub find_encoding {
 }
 
 sub decode_utf8($;$) {
-    return decode("utf8", @_);
+    return decode("utf-8", @_);
 }
 
 sub encode_utf8($;$) {
-    return encode("utf8", @_);
+    return encode("utf-8", @_);
 }
 
 sub decode($$;$) {
-    my $result = _convert($_[1], $_[0] => 'utf-8'); 
+    my $result = ($_[0] =~ /utf-?8/i)
+	? $_[1] : _convert($_[1], $_[0] => 'utf-8'); 
     _utf8_on($result);
     return $result;
 }
 
 sub encode($$;$) {
-    return _convert($_[1], 'utf-8' => $_[0]);
+    my $result = ($_[0] =~ /utf-?8/i)
+	? $_[1] : _convert($_[1], 'utf-8' => $_[0]);
+    _utf8_off($result);
+    return $result;
 }
 
 {
@@ -105,8 +109,8 @@ sub encode($$;$) {
 
 	require Encode::Alias;
 	my ($from, $to) = map {
-	    s/^utf8$/utf-8/;
-	    s/^big5-eten$/big5/;
+	    s/^utf8$/utf-8/i;
+	    s/^big5-eten$/big5/i;
 	    $_;
 	} map {
 	    Encode::Alias->find_alias($_) || lc($_)

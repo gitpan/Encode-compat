@@ -1,8 +1,8 @@
 # $File: //member/autrijus/Encode-compat/lib/Encode/compat.pm $ $Author: autrijus $
-# $Revision: #5 $ $Change: 2534 $ $DateTime: 2002/12/02 00:33:16 $
+# $Revision: #6 $ $Change: 10024 $ $DateTime: 2004/02/13 21:42:35 $
 
 package Encode::compat;
-$Encode::compat::VERSION = '0.05';
+$Encode::compat::VERSION = '0.06';
 
 use strict;
 
@@ -31,7 +31,8 @@ Encode::compat - Encode.pm emulation layer
 
 =head1 VERSION
 
-This document describes version 0.04 of Encode::compat.
+This document describes version 0.06 of Encode::compat, released
+February 14, 2004.
 
 =head1 SYNOPSIS
 
@@ -76,7 +77,7 @@ Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>
 
 =head1 COPYRIGHT
 
-Copyright 2002 by Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>.
+Copyright 2002, 2003, 2004 by Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>.
 
 This program is free software; you can redistribute it and/or 
 modify it under the same terms as Perl itself.
