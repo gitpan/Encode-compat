@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 # $File: //member/autrijus/Encode-compat/t/1-basic.t $ $Author: autrijus $
-# $Revision: #2 $ $Change: 1013 $ $DateTime: 2002/09/24 02:23:48 $
+# $Revision: #3 $ $Change: 1122 $ $DateTime: 2002/10/01 01:40:18 $
 
 use strict;
 use Test;
@@ -17,7 +17,7 @@ ok(!is_utf8($text));
 ok(length(decode(big5 => $text)), 2);
 ok(is_utf8(decode(big5 => $text)));
 
-from_to($text, 'big5' => 'utf8');
+from_to($text, 'big5eten' => 'utf8');
 ok(!is_utf8($text));
 ok(length($text), 6);
 

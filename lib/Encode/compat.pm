@@ -2,7 +2,7 @@
 # $Revision: #2 $ $Change: 1013 $ $DateTime: 2002/09/24 02:23:48 $
 
 package Encode::compat;
-$Encode::compat::VERSION = '0.02';
+$Encode::compat::VERSION = '0.03';
 
 use strict;
 
@@ -28,7 +28,7 @@ Encode::compat - Encode.pm emulation layer
 
 =head1 VERSION
 
-This document describes version 0.02 of Encode::compat.
+This document describes version 0.03 of Encode::compat.
 
 =head1 SYNOPSIS
 

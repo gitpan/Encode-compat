@@ -14,18 +14,19 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 acd1dd0e35da246eec238f17023459be3af6284d Changes
-SHA1 f7084144431a521a3f708879c4e952e8ce4bb0c8 MANIFEST
+SHA1 be2ad7b80f4b7d6543e0e1936840a735677e3d84 Changes
+SHA1 91fbf6e0f3a694bfb1ab342a2ebd99ea7e83ea18 MANIFEST
 SHA1 57b2271401ecea116f7d92e8be4cb509af164e71 Makefile.PL
 SHA1 95131168e8ca9c4ffce5886a17f65718d3ba0112 README
-SHA1 ae0acf6a54c59559b749f30afa452b3263f1f648 lib/Encode/compat.pm
-SHA1 f9817d6e76c895e50c6703e98bda53bdb403075a lib/Encode/compat/5006001.pm
-SHA1 75b1ec09e8df3de1a3cebeac7fe885d5a64e702b lib/Encode/compat/common.pm
-SHA1 8964d83073eb191fe85f6e742036bf39cbda094f t/1-basic.t
+SHA1 4c8587d83769d06dae43533d58b5da29cd75ac81 lib/Encode/Alias.pm
+SHA1 b33adb1458321e8b52f9809daa9ea5d649e69b1e lib/Encode/compat.pm
+SHA1 d614c3aa500e1d1970eea2aed9f326a93e47fde0 lib/Encode/compat/5006001.pm
+SHA1 78a12e4dcf50fda5fba2b23e27e846926b7a5c2b lib/Encode/compat/common.pm
+SHA1 602d357fe4892d8baace93878ca4bbbf4f829391 t/1-basic.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.0.7 (FreeBSD)
 
-iD8DBQE9j9HTtLPdNzw1AaARAv/VAKCOfK0DqEW/p2zuOhhWaqYCCitSMgCfRydm
-aiexL0m0pr1yUkhvfQj0Hpo=
-=mutU
+iD8DBQE9mQKAtLPdNzw1AaARAntZAJ9ttb4/betXMKyKIazXzWkq3HHoVQCeIt7a
+UtvRWhiib072gpMZHHcttRY=
+=Bmru
 -----END PGP SIGNATURE-----

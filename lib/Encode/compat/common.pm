@@ -1,15 +1,15 @@
 # $File: //member/autrijus/Encode-compat/lib/Encode/compat/common.pm $ $Author: autrijus $
-# $Revision: #2 $ $Change: 1013 $ $DateTime: 2002/09/24 02:23:48 $
+# $Revision: #4 $ $Change: 1122 $ $DateTime: 2002/10/01 01:40:18 $
 
 package Encode::compat::common;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 1;
 
 package Encode;
 
 use strict;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 our @EXPORT = qw(
   decode  decode_utf8  encode  encode_utf8
@@ -69,6 +69,10 @@ sub from_to ($$$;$) {
     }
 }
 
+sub find_encoding {
+    return $_[0];
+}
+
 sub decode($$;$) {
     my $result = _convert($_[1], $_[0] => 'utf-8'); 
     _utf8_on($result);
@@ -83,7 +87,16 @@ sub encode($$;$) {
     my %decoder;
     sub _convert {
 	require Text::Iconv;
-	my ($from, $to) = map { s/^utf8$/utf-8/i; lc($_) } ($_[1], $_[2]);
+	Text::Iconv->raise_error(1);
+
+	require Encode::Alias;
+	my ($from, $to) = map {
+	    s/^utf8$/utf-8/;
+	    s/^big5-eten$/big5/;
+	    $_;
+	} map {
+	    Encode::Alias->find_alias($_) || lc($_)
+	} ($_[1], $_[2]);
 
 	my $result = ($from eq $to) ? $_[0] : (
 	    $decoder{$from, $to} ||= Text::Iconv->new( $from, $to )

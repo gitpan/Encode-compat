@@ -1,4 +1,18 @@
 ____________________________________________________________________________
+[  1122] By: autrijus                              on 2002/10/01  01:40:18
+        Log: * This be 0.03.
+             * Encode::Alias inclusion, prompted by Robert Allerstorfer.
+	   + lib/Encode/Alias.pm
+	   ! MANIFEST lib/Encode/compat/common.pm t/1-basic.t
+____________________________________________________________________________
+[  1028] By: autrijus                              on 2002/09/24  14:41:58
+        Log: * switch from fb_queit to fb_default (die) as default.
+	   ! lib/Encode/compat/5006001.pm lib/Encode/compat/common.pm
+____________________________________________________________________________
+[  1015] By: autrijus                              on 2002/09/24  02:25:34
+        Log: * changes and signatures.
+	   ! Changes SIGNATURE
+____________________________________________________________________________
 [  1014] By: autrijus                              on 2002/09/24  02:24:44
         Log: * This be 0.02.
              * don't require Text::Iconv on v5.7.1+.
